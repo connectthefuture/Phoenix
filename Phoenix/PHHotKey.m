@@ -205,7 +205,7 @@ static OSStatus PHHotKeyCarbonCallback(EventHandlerCallRef inHandlerCallRef, Eve
     self.internalRegistrationNumber = ++PHHotKeyLastCarbonID;
 	EventHotKeyID hotKeyID = { .signature = 'FNYX', .id = self.internalRegistrationNumber };
     EventHotKeyRef carbonHotKey = NULL;
-    OSStatus status = RegisterEventHotKey(key, mods, hotKeyID, GetEventDispatcherTarget(), kEventHotKeyExclusive, &carbonHotKey);
+    OSStatus status = RegisterEventHotKey(key, mods, hotKeyID, GetEventDispatcherTarget(), 0, &carbonHotKey);
     
     self.carbonHotKey = carbonHotKey;
     
